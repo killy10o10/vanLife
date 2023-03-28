@@ -1,5 +1,47 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@500;600;700;800;900&display=swap');
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  font-family: 'Inter', system-ui, -apple-system, sans-serif;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+.section {
+  height: 100vh;
+}
+
+.button {
+  background-color: #ff8c38;
+  border-radius: 5px;
+  padding: 10px;
+  text-align: center;
+  color: #fff;
+  font-weight: 700;
+}
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 36px 26px;
+  box-shadow: 0px 10px 15px -3px rgba(0, 0, 0, 0.1);
+  background-color: #fff7ed;
+}
+
+.nav-links {
+  display: flex;
+  gap: 10px;
+}
+
+footer {
+  background-color: #252525;
+  box-shadow: 0px 10px 15px -3px rgba(0, 0, 0, 0.1);
+  color: #aaaaaa;
+  padding: 36px 26px;
+  text-align: center;
 }

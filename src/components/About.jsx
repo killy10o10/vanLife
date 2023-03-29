@@ -1,5 +1,9 @@
 function About() {
-  return <h1>About Page 🎉</h1>;
+  return (
+    <section className="about- section">
+      <h1>About Page 🎉</h1>
+    </section>
+  );
 }
 
 export default About;

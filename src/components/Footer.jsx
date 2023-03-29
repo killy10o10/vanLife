@@ -1,7 +1,16 @@
 function Footer() {
   const dateObj = new Date();
-  const currentYear = dateObj.getFullYear()
-  return <footer className="killy">DESIGNED BY: <a href="https://github.com/killy10o10" className="killy">Kingsley Okine / Quami killy</a> &copy; <a href="#">{currentYear}</a></footer>;
+  const currentYear = dateObj.getFullYear();
+  return (
+    <footer>
+      <a href="https://github.com/killy10o10" className="killy">
+        Kingsley Quami Okine
+      </a>
+      <p>
+        &copy; <span className="sheldon">{currentYear}</span>
+      </p>
+    </footer>
+  );
 }
 
 export default Footer;

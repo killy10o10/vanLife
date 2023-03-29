@@ -21,6 +21,10 @@
   font-weight: 500;
 }
 
+body {
+  background-color: #fff7ed;
+}
+
 a {
   text-decoration: none;
   color: inherit;
@@ -76,8 +80,13 @@ a {
   // font-weight: 700;
 }
 
+.button:hover {
+  background-color: #161616;
+}
+
 .button:active {
   scale: 97%;
+  background-color: #115e59;
 }
 
 .navbar {
@@ -92,6 +101,40 @@ a {
 .nav-links {
   display: flex;
   gap: 10px;
+
+  a:hover {
+    text-decoration: underline;
+  }
+}
+
+.about-img img {
+  width: 100%;
+}
+
+.about-content {
+  margin-block: 50px;
+  padding-inline: 27px;
+
+  h3 {
+    font-weight: 700;
+    font-size: 32px;
+    line-height: 38px;
+    margin-bottom: 32px;
+  }
+}
+
+.explore-card {
+  width: 100%;
+  background-color: #ffcc8d;
+  margin-top: 55px;
+  padding: 32px 37px;
+  border-radius: 5px;
+  box-shadow: 0px 10px 15px -3px rgba(0, 0, 0, 0.1);
+
+  p {
+    font-weight: 700;
+    font-size: 1.25em;
+  }
 }
 
 footer {

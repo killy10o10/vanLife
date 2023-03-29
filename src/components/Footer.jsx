@@ -3,7 +3,7 @@ function Footer() {
   const currentYear = dateObj.getFullYear();
   return (
     <footer>
-      <a href="https://github.com/killy10o10" className="killy">
+      <a href="https://github.com/killy10o10" target="_blank" className="killy">
         Kingsley Quami Okine
       </a>
       <p>

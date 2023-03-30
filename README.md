@@ -15,7 +15,7 @@
 ## Live Demo
 
 - [App Live Link]()
- ![Alt text](./screenshot.jpg "VanLife")
+ ![Alt text](./screenshot.png "VanLife")
 
 
 ## Getting Started

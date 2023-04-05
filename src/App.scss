@@ -77,6 +77,7 @@ a {
   transition: all 0.4s;
   box-shadow: 0px 10px 15px -3px rgba(0, 0, 0, 0.1),
     0px 10px 15px -3px rgba(0, 0, 0, 0.1);
+  user-select: none;
   // font-weight: 700;
 }
 
@@ -164,25 +165,24 @@ a {
       cursor: pointer;
       transition: all 0.3s;
       user-select: none;
-
     }
     .simple:hover {
       background-color: #e17654;
-      color: #FFEAD0;
+      color: #ffead0;
     }
     .luxury:hover {
       background-color: #161616;
-      color: #FFEAD0;
+      color: #ffead0;
     }
-    .rugged:hover{
+    .rugged:hover {
       background-color: #115e59;
-      color: #FFEAD0;
+      color: #ffead0;
     }
   }
   small {
     text-decoration: underline;
-   margin-bottom: 6px;
-   align-self: flex-end;
+    margin-bottom: 6px;
+    align-self: flex-end;
     cursor: pointer;
   }
 }
@@ -193,21 +193,38 @@ a {
   grid-template-columns: 1fr 1fr;
   gap: 20px;
 
-  .van-image{
+  .van-image {
     display: flex;
     flex-direction: column;
-    
- 
-    
-    img{
+
+    .van-name {
+      display: flex;
+      align-items: baseline;
+      justify-content: space-between;
+    }
+
+    img {
       width: 100%;
       border-radius: 5px;
     }
   }
-  h3 {
+  p {
     font-weight: 600;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
     // font-size: 1.25em;
   }
+}
+
+.category-button {
+  border: none;
+  padding: 6px 12px;
+  user-select: none;
+  border-radius: 5px;
+  font-weight: 600;
+  color: #ffead0;
+  background-color: #e17654;
 }
 
 footer {

@@ -1,6 +1,20 @@
 import vanImage from '../assets/van1.png';
+import { useState, useEffect } from 'react';
+import '../../server'
 
 function Vans() {
+  const [vansData, setVansData] = useState({})
+  useEffect(() => {
+
+    fetch("/api/vans")
+    .then((res) => res.json())
+    .then((json) => {
+      setVansData(json)
+    })
+  }, [])
+
+  console.log(vansData.vans)
+
   return (
     <section className="vans-section">
       <div className="category">

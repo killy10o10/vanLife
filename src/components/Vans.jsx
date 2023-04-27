@@ -1,61 +1,39 @@
-import vanImage from '../assets/van1.png';
 import { useState, useEffect } from 'react';
 import '../../server';
 
 function Vans() {
-  const [vansData, setVansData] = useState({});
-  let vanList;
+  const [vansData, setVansData] = useState([]);
+
   useEffect(() => {
     (async () => {
       try{
         const response = await fetch('/api/vans');
         const data = await response.json();
-        setVansData(data);
-        vanList = vansData.vans.map((van) => 
-            <>
-              <div className="van" key={van.id}>
-                <div className="van-image">
-                  <img src={van.imageUrl} alt="van-image" />
-                  <div className="van-name">
-                    <p>{van.name}</p>
-                    <p>
-                      {van.price}
-                      <small>/day</small>
-                    </p>
-                  </div>
-                </div>
-                <div className="van-description">
-                  <button className="category-button">{van.type}</button>
-                </div>
-              </div>
-            </>
-          );
+        setVansData(data.vans);
       }
       catch(err){
         console.log('Error occured when fetching vans')
       }
     })()
   }, []);
-  console.log(vansData.vans);
-  // const vanList = vansData.vans.map((van) => 
-  //   <>
-  //     <div className="van" key={van.id}>
-  //       <div className="van-image">
-  //         <img src={van.imageUrl} alt="van-image" />
-  //         <div className="van-name">
-  //           <p>{van.name}</p>
-  //           <p>
-  //             {van.price}
-  //             <small>/day</small>
-  //           </p>
-  //         </div>
-  //       </div>
-  //       <div className="van-description">
-  //         <button className="category-button">{van.type}</button>
-  //       </div>
-  //     </div>
-  //   </>
-  // );
+
+  const vanListEl = vansData.map((van) => 
+  <div className="van" key={van.id}>
+    <div className="van-image">
+      <img src={van.imageUrl} alt={van.name} />
+      <div className="van-name">
+        <p>{van.name}</p>
+        <p>
+          {van.price}
+          <small>/day</small>
+        </p>
+      </div>
+    </div>
+    <div className="van-description">
+      <button className="category-button">{van.type}</button>
+    </div>
+  </div>
+);
 
   return (
     <section className="vans-section">
@@ -69,7 +47,7 @@ function Vans() {
         </ul>
       </div>
       <div className="vans">
-        {vanList || `Loading...`}
+        { vanListEl || `Loading...`}
       </div>
     </section>
   );

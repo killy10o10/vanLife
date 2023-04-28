@@ -32,6 +32,16 @@ a {
   font-family: 'Sheldon', system-ui, -apple-system;
 }
 
+.back {
+  text-decoration: underline;
+  font-family: 'inter';
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  font-size: 16px;
+  width: fit-content;
+}
+
 .logo {
   h3 {
     font-weight: 900;
@@ -187,6 +197,10 @@ a {
   }
 }
 
+// .simple, .rugged, .luxury {
+//   color: #ffead0;
+// }
+
 .vans {
   margin-top: 50px;
   display: grid;
@@ -224,7 +238,48 @@ a {
   border-radius: 5px;
   font-weight: 600;
   color: #ffead0;
-  background-color: #e17654;
+}
+
+.van-details-section {
+  padding: 20px;
+  margin-top: 10px;
+
+  .van-details-image {
+    margin-top: 30px;
+    img {
+      width: 100%;
+      border-radius: 5px;
+      margin-bottom: 40px;
+    }
+  }
+
+  .van-details-description {
+    display: flex;
+    flex-direction: column;
+
+    h3 {
+      font-size: 2em;
+      font-weight: 700;
+      margin-block: 25px;
+    }
+
+    .price {
+      font-weight: 700;
+      font-size: 1.5rem;
+      margin-bottom: 10px;
+    }
+    .category-button {
+      text-transform: capitalize;
+      width: fit-content;
+    }
+
+    .button {
+      margin-top: 20px;
+      font-size: 1.125rem;
+      border: none;
+      font-weight: 700;
+    }
+  }
 }
 
 footer {
@@ -237,4 +292,16 @@ footer {
 
 .killy {
   font-family: 'VitrinesW00-Bold', system-ui, -apple-system;
+}
+
+.simple {
+  background-color: #e17654;
+}
+
+.rugged {
+  background-color: #115e59;
+}
+
+.luxury {
+  background-color: #161616;
 }

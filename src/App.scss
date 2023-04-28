@@ -32,6 +32,16 @@ a {
   font-family: 'Sheldon', system-ui, -apple-system;
 }
 
+.back {
+  text-decoration: underline;
+  font-family: 'inter';
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  font-size: 16px;
+  width: fit-content;
+}
+
 .logo {
   h3 {
     font-weight: 900;
@@ -77,6 +87,7 @@ a {
   transition: all 0.4s;
   box-shadow: 0px 10px 15px -3px rgba(0, 0, 0, 0.1),
     0px 10px 15px -3px rgba(0, 0, 0, 0.1);
+  user-select: none;
   // font-weight: 700;
 }
 
@@ -113,11 +124,11 @@ a {
 
 .about-content {
   margin-block: 50px;
-  padding-inline: 27px;
+  padding-inline: 20px;
 
   h3 {
     font-weight: 700;
-    font-size: 32px;
+    font-size: 2em;
     line-height: 38px;
     margin-bottom: 32px;
   }
@@ -137,6 +148,140 @@ a {
   }
 }
 
+.vans-section {
+  padding: 20px;
+}
+
+.category {
+  display: flex;
+  flex-direction: column;
+  // align-items: center;
+  h3 {
+    font-size: 2em;
+    font-weight: 700;
+    margin-block: 25px;
+  }
+  ul {
+    display: flex;
+    list-style: none;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+    li {
+      background-color: #ffead0;
+      // padding: 6px 25px;
+      padding: 6px 12px;
+      border-radius: 5px;
+      cursor: pointer;
+      transition: all 0.3s;
+      user-select: none;
+    }
+    .simple:hover {
+      background-color: #e17654;
+      color: #ffead0;
+    }
+    .luxury:hover {
+      background-color: #161616;
+      color: #ffead0;
+    }
+    .rugged:hover {
+      background-color: #115e59;
+      color: #ffead0;
+    }
+  }
+  small {
+    text-decoration: underline;
+    margin-bottom: 6px;
+    align-self: flex-end;
+    cursor: pointer;
+  }
+}
+
+// .simple, .rugged, .luxury {
+//   color: #ffead0;
+// }
+
+.vans {
+  margin-top: 50px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+
+  .van-image {
+    display: flex;
+    flex-direction: column;
+
+    .van-name {
+      display: flex;
+      align-items: baseline;
+      justify-content: space-between;
+    }
+
+    img {
+      width: 100%;
+      border-radius: 5px;
+    }
+  }
+  p {
+    font-weight: 600;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    // font-size: 1.25em;
+  }
+}
+
+.category-button {
+  border: none;
+  padding: 6px 12px;
+  user-select: none;
+  border-radius: 5px;
+  font-weight: 600;
+  color: #ffead0;
+}
+
+.van-details-section {
+  padding: 20px;
+  margin-top: 10px;
+
+  .van-details-image {
+    margin-top: 30px;
+    img {
+      width: 100%;
+      border-radius: 5px;
+      margin-bottom: 40px;
+    }
+  }
+
+  .van-details-description {
+    display: flex;
+    flex-direction: column;
+
+    h3 {
+      font-size: 2em;
+      font-weight: 700;
+      margin-block: 25px;
+    }
+
+    .price {
+      font-weight: 700;
+      font-size: 1.5rem;
+      margin-bottom: 10px;
+    }
+    .category-button {
+      text-transform: capitalize;
+      width: fit-content;
+    }
+
+    .button {
+      margin-top: 20px;
+      font-size: 1.125rem;
+      border: none;
+      font-weight: 700;
+    }
+  }
+}
+
 footer {
   background-color: #252525;
   box-shadow: 0px 10px 15px -3px rgba(0, 0, 0, 0.1);
@@ -147,4 +292,16 @@ footer {
 
 .killy {
   font-family: 'VitrinesW00-Bold', system-ui, -apple-system;
+}
+
+.simple {
+  background-color: #e17654;
+}
+
+.rugged {
+  background-color: #115e59;
+}
+
+.luxury {
+  background-color: #161616;
 }

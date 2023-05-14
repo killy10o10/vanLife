@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
-import '../../server';
-import { NavLink } from 'react-router-dom';
+import '../../../server';
+import { Link } from 'react-router-dom';
 
 function Vans() {
   const [vansData, setVansData] = useState([]);
@@ -20,9 +20,9 @@ function Vans() {
   const vanListEl = vansData.map((van) => (
     <div className="van" key={van.id}>
       <div className="van-image">
-        <NavLink to="/vanDetails" state={van}>
+        <Link to={`/vans/${van.id}`} state={van}>
           <img src={van.imageUrl} alt={van.name} />
-        </NavLink>
+        </Link>
         <div className="van-name">
           <p>{van.name}</p>
           <p>

@@ -1,0 +1,50 @@
+.category-button {
+  border: none;
+  padding: 6px 12px;
+  user-select: none;
+  border-radius: 5px;
+  font-weight: 600;
+  color: #ffead0;
+}
+
+.van-details-section {
+  padding: 20px;
+  margin-top: 10px;
+
+  .van-details-image {
+    margin-top: 30px;
+    img {
+      width: 100%;
+      border-radius: 5px;
+      margin-bottom: 40px;
+    }
+  }
+
+  .van-details-description {
+    display: flex;
+    flex-direction: column;
+
+    h3 {
+      font-size: 2em;
+      font-weight: 700;
+      margin-block: 25px;
+    }
+
+    .price {
+      font-weight: 700;
+      font-size: 1.5rem;
+      margin-bottom: 10px;
+    }
+    .category-button {
+      text-transform: capitalize;
+      width: fit-content;
+    }
+
+    .button {
+      margin-top: 20px;
+      font-size: 1.125rem;
+      border: none;
+      font-weight: 700;
+    }
+  }
+}

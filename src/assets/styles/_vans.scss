@@ -1,0 +1,83 @@
+
+.vans-section {
+  padding: 20px;
+}
+
+.category {
+  display: flex;
+  flex-direction: column;
+  // align-items: center;
+  h3 {
+    font-size: 2em;
+    font-weight: 700;
+    margin-block: 25px;
+  }
+  ul {
+    display: flex;
+    list-style: none;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+    li {
+      background-color: #ffead0;
+      // padding: 6px 25px;
+      padding: 6px 12px;
+      border-radius: 5px;
+      cursor: pointer;
+      transition: all 0.3s;
+      user-select: none;
+    }
+    .simple:hover {
+      background-color: #e17654;
+      color: #ffead0;
+    }
+    .luxury:hover {
+      background-color: #161616;
+      color: #ffead0;
+    }
+    .rugged:hover {
+      background-color: #115e59;
+      color: #ffead0;
+    }
+  }
+  small {
+    text-decoration: underline;
+    margin-bottom: 6px;
+    align-self: flex-end;
+    cursor: pointer;
+  }
+}
+
+// .simple, .rugged, .luxury {
+//   color: #ffead0;
+// }
+
+.vans {
+  margin-top: 50px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+
+  .van-image {
+    display: flex;
+    flex-direction: column;
+
+    .van-name {
+      display: flex;
+      align-items: baseline;
+      justify-content: space-between;
+    }
+
+    img {
+      width: 100%;
+      border-radius: 5px;
+    }
+  }
+  p {
+    font-weight: 600;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    // font-size: 1.25em;
+  }
+}

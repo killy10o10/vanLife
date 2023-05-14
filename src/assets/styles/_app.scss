@@ -1,0 +1,100 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@500;600;700;800;900&display=swap');
+@font-face {
+  font-family: 'VitrinesW00-Bold';
+  src: url('../fonts/Vitrines\ W00\ Bold.ttf');
+}
+@font-face {
+  font-family: 'Sheldon';
+  src: url('../fonts/Sheldon.ttf');
+}
+
+.sheldon {
+  font-family: 'Sheldon', system-ui, -apple-system;
+  font-size: 1.2em;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Inter', system-ui, -apple-system, sans-serif;
+  font-weight: 500;
+}
+
+body {
+  background-color: #fff7ed;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+  font-size: 1.2em;
+  font-family: 'Sheldon', system-ui, -apple-system;
+}
+
+.back {
+  text-decoration: underline;
+  font-family: 'inter';
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  font-size: 16px;
+  width: fit-content;
+}
+
+.logo {
+  h3 {
+    font-weight: 900;
+  }
+}
+
+.section {
+  height: 80vh;
+}
+
+.button {
+  background-color: #ff8c38;
+  border-radius: 5px;
+  padding: 10px;
+  text-align: center;
+  color: #fff;
+  width: 100%;
+  font-size: 1.5em;
+  transition: all 0.4s;
+  box-shadow: 0px 10px 15px -3px rgba(0, 0, 0, 0.1),
+    0px 10px 15px -3px rgba(0, 0, 0, 0.1);
+  user-select: none;
+  // font-weight: 700;
+}
+
+.button:hover {
+  background-color: #161616;
+}
+
+.button:active {
+  scale: 97%;
+  background-color: #115e59;
+}
+
+.host-layout-nav {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 15px;
+}
+
+.killy {
+  font-family: 'VitrinesW00-Bold', system-ui, -apple-system;
+}
+
+.simple {
+  background-color: #e17654;
+}
+
+.rugged {
+  background-color: #115e59;
+}
+
+.luxury {
+  background-color: #161616;
+}

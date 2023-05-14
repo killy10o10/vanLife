@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-import '../../server';
+import '../../../server';
 import { Link } from 'react-router-dom';
 
 function Vans() {

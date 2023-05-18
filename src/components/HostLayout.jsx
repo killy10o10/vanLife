@@ -5,9 +5,10 @@ function HostLayout() {
     <>
       <nav className="host-layout-nav">
         <NavLink to="/host">Dashboard</NavLink>
-        <NavLink to="/income">Income</NavLink>
+        <NavLink to="income">Income</NavLink>
         <NavLink to="reviews">Reviews</NavLink>
       </nav>
+      <Outlet />
     </>
   )
 }

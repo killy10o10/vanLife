@@ -50,7 +50,7 @@ a {
 }
 
 .section {
-  height: 80vh;
+  height: 90vh;
 }
 
 .button {
@@ -91,4 +91,9 @@ a {
 
 .luxury {
   background-color: $luxury;
+}
+
+.activeStyle {
+  font-weight: bold;
+  text-decoration: underline;
 }

@@ -26,7 +26,7 @@ function Vans() {
         <div className="van-name">
           <p>{van.name}</p>
           <p>
-            {van.price}
+            GH¢{van.price}
             <small>/day</small>
           </p>
         </div>

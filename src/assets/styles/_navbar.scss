@@ -10,8 +10,10 @@
 .nav-links {
   display: flex;
   gap: 10px;
+  transition: ease-in-out;
 
   a:hover {
     text-decoration: underline;
+    font-weight: bold;
   }
 }

@@ -1,6 +1,8 @@
-import { Link } from 'react-router-dom';
+import { Link, NavLink } from 'react-router-dom';
 
 function Navbar() {
+
+
   return (
     <nav className="navbar">
       <div className="logo">
@@ -9,9 +11,9 @@ function Navbar() {
         </Link>
       </div>
       <div className="nav-links">
-        <Link to="/host">Host</Link>
-        <Link to="/about">About</Link>
-        <Link to="/vans">Vans</Link>
+        <NavLink className={({isActive}) => isActive? "activeStyle" : null} to="/host">Host</NavLink>
+        <NavLink className={({isActive}) => isActive? "activeStyle" : null}  to="/about">About</NavLink>
+        <NavLink className={({isActive}) => isActive? "activeStyle" : null}  to="/vans">Vans</NavLink>
       </div>
     </nav>
   );

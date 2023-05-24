@@ -5,12 +5,12 @@ function HostLayout() {
     <>
       <nav className="host-layout-nav">
         <NavLink to="/host">Dashboard</NavLink>
-        <NavLink to="income">Income</NavLink>
-        <NavLink to="reviews">Reviews</NavLink>
+        <NavLink className={({isActive}) => isActive? "activeStyle" : null} to="income">Income</NavLink>
+        <NavLink className={({isActive}) => isActive? "activeStyle" : null} to="reviews">Reviews</NavLink>
       </nav>
       <Outlet />
     </>
   )
 }
 
-export default HostLayout
+export default HostLayout;

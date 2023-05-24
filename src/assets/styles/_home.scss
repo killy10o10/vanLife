@@ -21,3 +21,21 @@
   margin-top: 23px;
   margin-bottom: 52px;
 }
+
+@media only screen and (min-width: 550px) {
+  .home-intro, .home-desc{
+    max-width: 600px;
+    text-align: center;
+  }
+
+  .home-intro {
+    font-size: 3.5em;
+  }
+  .home-desc {
+    font-size: 1.5em;
+  }
+
+  .home-content .button {
+    max-width: 20%;
+  }
+}

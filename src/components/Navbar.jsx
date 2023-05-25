@@ -1,8 +1,6 @@
 import { Link, NavLink } from 'react-router-dom';
 
 function Navbar() {
-
-
   return (
     <nav className="navbar">
       <div className="logo">
@@ -11,9 +9,24 @@ function Navbar() {
         </Link>
       </div>
       <div className="nav-links">
-        <NavLink className={({isActive}) => isActive? "activeStyle" : null} to="/host">Host</NavLink>
-        <NavLink className={({isActive}) => isActive? "activeStyle" : null}  to="/about">About</NavLink>
-        <NavLink className={({isActive}) => isActive? "activeStyle" : null}  to="/vans">Vans</NavLink>
+        <NavLink
+          className={({ isActive }) => (isActive ? 'activeStyle' : null)}
+          to="/host"
+        >
+          Host
+        </NavLink>
+        <NavLink
+          className={({ isActive }) => (isActive ? 'activeStyle' : null)}
+          to="/about"
+        >
+          About
+        </NavLink>
+        <NavLink
+          className={({ isActive }) => (isActive ? 'activeStyle' : null)}
+          to="/vans"
+        >
+          Vans
+        </NavLink>
       </div>
     </nav>
   );

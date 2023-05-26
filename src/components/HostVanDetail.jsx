@@ -1,9 +1,55 @@
+import { Link, NavLink, useLocation } from 'react-router-dom';
+import { BsArrowLeft } from 'react-icons/bs';
+
 const HostVanDetail = () => {
-    return(
-        <>
-            <h1>Host vans Details</h1>
-        </>
-    )
-}
+  const location = useLocation();
+  const { state } = location;
+  //   console.log(state);
+
+  return (
+    <>
+      <section className="host-van-detail-section">
+        <Link to="/host/hostVans" className="back">
+          <BsArrowLeft /> Back to all vans
+        </Link>
+        <div className="host-van-deatil-card">
+          <div className="host-van-detail-head">
+            <div className="host-van-detail-image">
+              <img src={state.imageUrl} alt={state.name} />
+            </div>
+            <div className="host-van-detail-title">
+              <button type="button" className={`category-button ${state.type}`}>
+                {state.type}
+              </button>
+              <h3>{state.name}</h3>
+              <small>
+                <strong className="bold">${state.price}</strong>/day
+              </small>
+            </div>
+          </div>
+          <nav>
+            <NavLink>Details</NavLink>
+            <NavLink>Pricing</NavLink>
+            <NavLink>Photos</NavLink>
+          </nav>
+          <div className="host-van-detail">
+            <p>
+              <strong className="bold">Name:</strong> {state.name}
+            </p>
+            <p>
+              <strong className="bold">Category:</strong> {state.type}
+            </p>
+            <p>
+              <strong className="bold">Description:</strong> {state.description}
+            </p>
+            <p>
+              <strong className="bold">Visibility:</strong> Public
+            </p>
+          </div>
+        </div>
+      </section>
+    </>
+  );
+};
 
 export default HostVanDetail;

@@ -4,7 +4,7 @@ import { BsArrowLeft } from 'react-icons/bs';
 function VanDetails() {
   const location = useLocation();
   const { state } = location;
-  console.log(state);
+
   return (
     <section className="van-details-section">
       <Link to="/vans" className="back">

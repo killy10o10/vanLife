@@ -51,6 +51,7 @@ a {
 
 .section {
   height: 90vh;
+  overflow: scroll;
 }
 
 .button {
@@ -100,4 +101,8 @@ a {
 
 .bold {
   font-weight: bolder;
+}
+
+.center {
+  text-align: center;
 }

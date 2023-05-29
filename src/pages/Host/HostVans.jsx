@@ -1,4 +1,3 @@
-import '../../../server';
 import { Link } from 'react-router-dom';
 import { useEffect, useState } from 'react';
 
@@ -38,7 +37,7 @@ const HostVans = () => {
         <h3>Your Listed vans</h3>
         <div className="host-vans-container">
           {/* Host Van */}
-            {hostVans}
+          {vans.length === 0 ? <h3 className='center'>Loading...</h3> : hostVans}   
         </div>
       </section>
     </>

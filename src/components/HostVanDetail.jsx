@@ -1,15 +1,35 @@
-import { Link, NavLink, useLocation } from 'react-router-dom';
+import { Link, NavLink, Outlet, useLocation, useParams } from 'react-router-dom';
 import { BsArrowLeft } from 'react-icons/bs';
+import { useEffect, useState } from 'react';
 
 const HostVanDetail = () => {
   const location = useLocation();
   const { state } = location;
-  //   console.log(state);
+
+  const { id } = useParams();
+
+  console.log(id)
+
+  const [currentVan, setCurrentVan] = useState(null);
+  useEffect(() => {
+    (async () => {
+      try {
+        const response = await fetch(`/api/host/vans/${id}`);
+        const data = await response.json();
+        console.log(data)
+        setCurrentVan(data.vans);
+      } catch (err) {
+        console.log('Error occurred when fetching vans');
+      }
+    })();
+  }, []);
+
+  // console.log(currentVan)
 
   return (
     <>
       <section className="host-van-detail-section">
-        <Link to="/host/hostVans" className="back">
+        <Link to=".." relative="path" className="back">
           <BsArrowLeft /> Back to all vans
         </Link>
         <div className="host-van-deatil-card">
@@ -28,9 +48,9 @@ const HostVanDetail = () => {
             </div>
           </div>
           <nav>
-            <NavLink>Details</NavLink>
-            <NavLink>Pricing</NavLink>
-            <NavLink>Photos</NavLink>
+            <NavLink to="details">Details</NavLink>
+            {/* <NavLink>Pricing</NavLink>
+            <NavLink>Photos</NavLink> */}
           </nav>
           <div className="host-van-detail">
             <p>
@@ -46,6 +66,7 @@ const HostVanDetail = () => {
               <strong className="bold">Visibility:</strong> Public
             </p>
           </div>
+          <Outlet />
         </div>
       </section>
     </>

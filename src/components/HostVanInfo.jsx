@@ -1,7 +1,7 @@
 function HostVanInfo() {
   return (
     <>
-    <h2>Van HostVanInfo here</h2>
+    <h2> HostVanInfo here</h2>
       {/* <div className="host-van-detail">
         <p>
           <strong className="bold">Name:</strong> {state.name}

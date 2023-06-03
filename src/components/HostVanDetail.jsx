@@ -1,14 +1,10 @@
-import { Link, NavLink, Outlet, useLocation, useParams } from 'react-router-dom';
+import { Link, NavLink, Outlet, useParams } from 'react-router-dom';
 import { BsArrowLeft } from 'react-icons/bs';
 import { useEffect, useState } from 'react';
-import "../../server";
 
 const HostVanDetail = () => {
-  const location = useLocation();
-  const { state } = location;
 
   const { id } = useParams();
-
 
   const [currentVan, setCurrentVan] = useState([]);
   useEffect(() => {
@@ -23,8 +19,6 @@ const HostVanDetail = () => {
     })();
   }, []);
   
-  console.log(currentVan);
-
   return (
     <>
       <section className="host-van-detail-section">
@@ -34,37 +28,23 @@ const HostVanDetail = () => {
         <div className="host-van-deatil-card">
           <div className="host-van-detail-head">
             <div className="host-van-detail-image">
-              <img src={state.imageUrl} alt={state.name} />
+              <img src={currentVan.imageUrl} alt={currentVan.name} />
             </div>
             <div className="host-van-detail-title">
-              <button type="button" className={`category-button ${state.type}`}>
-                {state.type}
+              <button type="button" className={`category-button ${currentVan.type}`}>
+                {currentVan.type}
               </button>
-              <h3>{state.name}</h3>
+              <h3>{currentVan.name}</h3>
               <small>
-                <strong className="bold">${state.price}</strong>/day
+                <strong className="bold">${currentVan.price}</strong>/day
               </small>
             </div>
           </div>
           <nav>
-            <NavLink to="details">Details</NavLink>
-            {/* <NavLink>Pricing</NavLink>
-            <NavLink>Photos</NavLink> */}
+            <NavLink state={currentVan} to="details" className={({ isActive }) => (isActive ? 'activeStyle' : null)}>Details</NavLink>
+            <NavLink state={currentVan} to="pricing"  className={({ isActive }) => (isActive ? 'activeStyle' : null)}>Pricing</NavLink>
+            <NavLink state={currentVan} to="photos" className={({ isActive }) => (isActive ? 'activeStyle' : null)}>Photos</NavLink>
           </nav>
-          <div className="host-van-detail">
-            <p>
-              <strong className="bold">Name:</strong> {state.name}
-            </p>
-            <p>
-              <strong className="bold">Category:</strong> {state.type}
-            </p>
-            <p>
-              <strong className="bold">Description:</strong> {state.description}
-            </p>
-            <p>
-              <strong className="bold">Visibility:</strong> Public
-            </p>
-          </div>
           <Outlet />
         </div>
       </section>

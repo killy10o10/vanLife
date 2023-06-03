@@ -12,7 +12,9 @@ import HostVans from './pages/Host/HostVans';
 import HostVanDetail from './components/HostVanDetail';
 import Reviews from './pages/Host/Reviews';
 import HostLayout from './components/HostLayout';
-import HostVanInfo from './pages/Host/HostVanInfo';
+import HostVanInfo from './components/HostVanInfo';
+import HostVanPhotos from './components/HostVanPhotos';
+import HostVanPricing from './components/HostVanPricing';
 
 function App() {
   return (
@@ -30,7 +32,9 @@ function App() {
             <Route path="reviews" element={<Reviews />} />
             <Route path="vans" element={<HostVans />} />
             <Route path="vans/:id" element={<HostVanDetail />} >
-              <Route path="details" element={<HostVanInfo />} />
+              <Route index path="details" element={<HostVanInfo />} />
+              <Route  path="pricing" element={<HostVanPricing />} />
+              <Route path="photos" element={<HostVanPhotos />} />
             </Route>
           </Route>
         </Route>

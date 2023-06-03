@@ -1,4 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@500;600;700;800;900&display=swap');
+
 @font-face {
   font-family: 'VitrinesW00-Bold';
   src: url('../fonts/Vitrines\ W00\ Bold.ttf');
@@ -22,7 +23,7 @@
 }
 
 body {
-  background-color: #fff7ed;
+  background-color: $paleBackground;
 }
 
 a {
@@ -49,11 +50,12 @@ a {
 }
 
 .section {
-  height: 80vh;
+  height: 90vh;
+  overflow: scroll;
 }
 
 .button {
-  background-color: #ff8c38;
+  background-color: $buttonOrange;
   border-radius: 5px;
   padding: 10px;
   text-align: center;
@@ -68,19 +70,12 @@ a {
 }
 
 .button:hover {
-  background-color: #161616;
+  background-color: $luxury;
 }
 
 .button:active {
   scale: 97%;
-  background-color: #115e59;
-}
-
-.host-layout-nav {
-  display: flex;
-  align-items: center;
-  gap: 10px;
-  padding: 15px;
+  background-color: $rugged;
 }
 
 .killy {
@@ -88,13 +83,26 @@ a {
 }
 
 .simple {
-  background-color: #e17654;
+  background-color: $simple;
 }
 
 .rugged {
-  background-color: #115e59;
+  background-color: $rugged;
 }
 
 .luxury {
-  background-color: #161616;
+  background-color: $luxury;
+}
+
+.activeStyle {
+  font-weight: bold;
+  text-decoration: underline;
+}
+
+.bold {
+  font-weight: bolder;
+}
+
+.center {
+  text-align: center;
 }

@@ -1,7 +1,12 @@
 function Dashboard() {
   return (
     <>
-      <h1>Dashboard</h1>
+        <section className="host-vans-section">
+        <h3>Welcome!</h3>
+        <div className="host-vans-container">
+          
+        </div>
+      </section>
     </>
   )
 }

@@ -6,7 +6,7 @@ const HostVans = () => {
   useEffect(() => {
     (async () => {
       try {
-        const response = await fetch('/api/vans');
+        const response = await fetch('/api/host/vans');
         const data = await response.json();
         setVans(data.vans);
       } catch (err) {
@@ -17,7 +17,7 @@ const HostVans = () => {
 
   const hostVans = vans.map((van) => {
     return (
-      <Link to={`/host/vans/${van.hostId}`} key={van.id} state={van}>
+      <Link to={`/host/vans/${van.id}`} key={van.id} state={van}>
         <div className="host-van">
           <div className="host-van-image">
             <img src={van.imageUrl} alt={van.name} />

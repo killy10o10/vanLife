@@ -1,6 +1,7 @@
 import { Link, NavLink, Outlet, useLocation, useParams } from 'react-router-dom';
 import { BsArrowLeft } from 'react-icons/bs';
 import { useEffect, useState } from 'react';
+import "../../server";
 
 const HostVanDetail = () => {
   const location = useLocation();
@@ -8,23 +9,21 @@ const HostVanDetail = () => {
 
   const { id } = useParams();
 
-  console.log(id)
 
-  const [currentVan, setCurrentVan] = useState(null);
+  const [currentVan, setCurrentVan] = useState([]);
   useEffect(() => {
     (async () => {
       try {
         const response = await fetch(`/api/host/vans/${id}`);
         const data = await response.json();
-        console.log(data)
         setCurrentVan(data.vans);
       } catch (err) {
-        console.log('Error occurred when fetching vans');
+        console.log(err);
       }
     })();
   }, []);
-
-  // console.log(currentVan)
+  
+  console.log(currentVan);
 
   return (
     <>

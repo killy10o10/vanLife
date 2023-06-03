@@ -1,10 +1,16 @@
 import React from 'react'
+import { useLocation } from 'react-router-dom'
 
 function HostVanPricing() {
+
+  const location = useLocation();
+  const { state } = location;
   return (
-    <div>
-      <h1>Host Van Pricing</h1>
-    </div>
+    <>
+      <div className='host-van-detail-pricing'>
+        <h1>{state.price}<small>/day</small></h1>
+      </div>
+    </>
   )
 }
 

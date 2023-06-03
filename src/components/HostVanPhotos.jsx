@@ -1,10 +1,17 @@
 import React from 'react'
+import { useLocation } from 'react-router-dom'
 
 function HostVanPhotos() {
+  const location = useLocation();
+  const { state } = location;
+
+
   return (
-    <div>
-      <h1>Host Van photos</h1>
-    </div>
+    <>
+      <div className="host-van-detail-photos">
+        <img src={state.imageUrl} alt={state.name} />
+      </div>
+    </>
   )
 }
 

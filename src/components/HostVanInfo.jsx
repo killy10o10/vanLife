@@ -1,8 +1,13 @@
+import { useLocation } from "react-router-dom";
+
 function HostVanInfo() {
+
+  const location = useLocation();
+  const { state } = location;
+  console.log(state)
   return (
     <>
-    <h2> HostVanInfo here</h2>
-      {/* <div className="host-van-detail">
+      <div className="host-van-detail">
         <p>
           <strong className="bold">Name:</strong> {state.name}
         </p>
@@ -15,7 +20,7 @@ function HostVanInfo() {
         <p>
           <strong className="bold">Visibility:</strong> Public
         </p>
-      </div> */}
+      </div>
     </>
   )
 }

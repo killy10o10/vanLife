@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useSearchParams } from 'react-router-dom';
 
 function Vans() {
   const [vansData, setVansData] = useState([]);
@@ -16,7 +16,19 @@ function Vans() {
     })();
   }, []);
 
-  const vanListEl = vansData.map((van) => (
+  const [searchParams, setSeachParams] = useSearchParams();
+  const typeFilter = searchParams.get('type');
+
+  const handleFilter = (e) => {
+    const params = { type: e.target.innerText.toLowerCase() };
+    setSeachParams(params);
+  };
+
+  const displayedVans = typeFilter
+    ? vansData.filter((van) => van.type.toLowerCase() === typeFilter)
+    : vansData;
+
+  const vanListEl = displayedVans.map((van) => (
     <div className="van" key={van.id}>
       <div className="van-image">
         <Link to={`/vans/${van.id}`} state={van}>
@@ -42,12 +54,24 @@ function Vans() {
         <h3>Explore our van options</h3>
         <small>Clear filters</small>
         <ul className="category-list">
-          <li className="simple">Simple</li>
-          <li className="luxury">Luxury</li>
-          <li className="rugged">Rugged</li>
+          <li onClick={handleFilter} className="simple">
+            Simple
+          </li>
+          <li onClick={handleFilter} className="luxury">
+            Luxury
+          </li>
+          <li onClick={handleFilter} className="rugged">
+            Rugged
+          </li>
         </ul>
       </div>
-      <div className="vans">{vansData.length === 0 ? <h3 className='center bold'>Loading...</h3> : vanListEl}</div>
+      <div className="vans">
+        {vansData.length === 0 ? (
+          <h3 className="center bold">Loading...</h3>
+        ) : (
+          vanListEl
+        )}
+      </div>
     </section>
   );
 }

@@ -1,21 +1,19 @@
-import { useLocation } from "react-router-dom";
+import { useOutletContext } from "react-router-dom";
 
 function HostVanInfo() {
+  const currentVan = useOutletContext();
 
-  const location = useLocation();
-  const { state } = location;
-  console.log(state)
   return (
     <>
       <div className="host-van-detail">
         <p>
-          <strong className="bold">Name:</strong> {state.name}
+          <strong className="bold">Name:</strong> {currentVan.name}
         </p>
         <p>
-          <strong className="bold">Category:</strong> {state.type}
+          <strong className="bold">Category:</strong> {currentVan.type}
         </p>
         <p>
-          <strong className="bold">Description:</strong> {state.description}
+          <strong className="bold">Description:</strong> {currentVan.description}
         </p>
         <p>
           <strong className="bold">Visibility:</strong> Public

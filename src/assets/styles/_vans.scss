@@ -6,7 +6,7 @@
 .category {
   display: flex;
   flex-direction: column;
-  // align-items: center;
+
   h3 {
     font-size: 2em;
     font-weight: 700;
@@ -55,7 +55,6 @@
 .vans {
   margin-top: 50px;
   display: grid;
-  grid-template-columns: 1fr 1fr;
   gap: 20px;
 
   .van-image {
@@ -79,5 +78,34 @@
     flex-direction: column;
     align-items: center;
     // font-size: 1.25em;
+  }
+}
+
+@media only screen and (min-width: 450px) {
+  .vans {
+      grid-template-columns: 1fr 1fr;
+  }
+}
+
+@media only screen and (min-width: 850px) {
+.van {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  .category-button {
+    width: 250px;
+    padding: 15px;
+    font-size: 1.25rem;
+  }
+}
+
+
+  .vans {
+    row-gap: 100px;
+      .van-image {
+        width: 70%;
+      }
   }
 }

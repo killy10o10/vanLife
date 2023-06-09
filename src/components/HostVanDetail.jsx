@@ -41,11 +41,11 @@ const HostVanDetail = () => {
             </div>
           </div>
           <nav>
-            <NavLink state={currentVan} to="details" className={({ isActive }) => (isActive ? 'activeStyle' : null)}>Details</NavLink>
+            <NavLink state={currentVan} to="." end className={({ isActive }) => (isActive ? 'activeStyle' : null)}>Details</NavLink>
             <NavLink state={currentVan} to="pricing"  className={({ isActive }) => (isActive ? 'activeStyle' : null)}>Pricing</NavLink>
             <NavLink state={currentVan} to="photos" className={({ isActive }) => (isActive ? 'activeStyle' : null)}>Photos</NavLink>
           </nav>
-          <Outlet />
+          <Outlet context={currentVan} />
         </div>
       </section>
     </>

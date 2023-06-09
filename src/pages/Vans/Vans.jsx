@@ -24,6 +24,10 @@ function Vans() {
     setSeachParams(params);
   };
 
+  const handleClearFilter = () => {
+    setSeachParams("");
+  };
+
   const displayedVans = typeFilter
     ? vansData.filter((van) => van.type.toLowerCase() === typeFilter)
     : vansData;
@@ -52,7 +56,7 @@ function Vans() {
     <section className="vans-section">
       <div className="category">
         <h3>Explore our van options</h3>
-        <small>Clear filters</small>
+        <small onClick={handleClearFilter}>Clear filters</small>
         <ul className="category-list">
           <li onClick={handleFilter} className="simple">
             Simple

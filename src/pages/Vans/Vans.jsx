@@ -1,5 +1,6 @@
 import { useState, useEffect } from 'react';
 import { Link, useSearchParams } from 'react-router-dom';
+import { motion, AnimatePresence } from 'framer-motion';
 
 function Vans() {
   const [vansData, setVansData] = useState([]);
@@ -33,7 +34,7 @@ function Vans() {
     : vansData;
 
   const vanListEl = displayedVans.map((van) => (
-    <div className="van" key={van.id}>
+    <motion.div animate={{opacity: 1}} initial={{opacity: 0}} exit={{opacity: 0}} layout className="van" key={van.id}>
       <div className="van-image">
         <Link to={`/vans/${van.id}`} state={van}>
           <img src={van.imageUrl} alt={van.name} />
@@ -49,7 +50,7 @@ function Vans() {
       <div className="van-description">
         <button className={`category-button ${van.type}`}>{van.type}</button>
       </div>
-    </div>
+    </motion.div>
   ));
 
   return (
@@ -69,13 +70,15 @@ function Vans() {
           </li>
         </ul>
       </div>
-      <div className="vans">
-        {vansData.length === 0 ? (
-          <h3 className="center bold">Loading...</h3>
-        ) : (
-          vanListEl
-        )}
-      </div>
+      <motion.div layout className="vans">
+        <AnimatePresence>
+            {vansData.length === 0 ? (
+              <h3 className="center bold">Loading...</h3>
+            ) : (
+              vanListEl
+            )}
+        </AnimatePresence>
+      </motion.div>
     </section>
   );
 }

@@ -64,7 +64,7 @@ function Vans() {
     <section className="vans-section">
       <div className="category">
         <h3>Explore our van options</h3>
-        <small onClick={handleClearFilter}>Clear filters</small>
+        {searchParams.size ? <small onClick={handleClearFilter}>Clear filters</small> : ""}
         <ul className="category-list">
           <li onClick={handleFilter} className="simple">
             Simple

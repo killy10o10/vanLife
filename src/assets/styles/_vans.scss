@@ -1,4 +1,3 @@
-
 .vans-section {
   padding: 20px;
   min-height: 80vh;
@@ -12,12 +11,14 @@
     font-size: 2em;
     font-weight: 700;
     margin-block: 25px;
+    align-self: center;
   }
   ul {
     display: flex;
     list-style: none;
     align-items: center;
     justify-content: space-between;
+    align-self: center;
     gap: 20px;
     li {
       background-color: #ffead0;
@@ -84,29 +85,32 @@
 
 @media only screen and (min-width: 450px) {
   .vans {
-      grid-template-columns: 1fr 1fr;
+    grid-template-columns: 1fr 1fr;
   }
 }
 
 @media only screen and (min-width: 850px) {
-.van {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
+  .van {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 
-  .category-button {
-    width: 250px;
-    padding: 15px;
-    font-size: 1.25rem;
+    .category-button {
+      // width: 250px;
+      padding: 10px;
+      font-size: 1.25rem;
+    }
   }
-}
-
 
   .vans {
-    row-gap: 100px;
-      .van-image {
-        width: 70%;
-      }
+    grid-template-columns: repeat(3, 350px);
+    justify-content: center;
+    align-items: center;
+    gap: 40px;
+    padding: 20px;
+    .van-image {
+      width: 100%;
+    }
   }
 }

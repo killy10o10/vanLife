@@ -1,8 +1,8 @@
 function Reviews() {
   return (
-    <div>
+    <section className="reviews-section">
       <h1>Reviews</h1>
-    </div>
+    </section>
   )
 }
 

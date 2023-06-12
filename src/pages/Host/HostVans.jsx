@@ -34,7 +34,7 @@ const HostVans = () => {
   return (
     <>
       <section className="host-vans-section">
-        <h3>Your Listed vans</h3>
+        <h3>Your Listed Vans</h3>
         <div className="host-vans-container">
           {/* Host Van */}
           {vans.length === 0 ? <h3 className='center'>Loading...</h3> : hostVans}   

@@ -2,6 +2,9 @@
   min-height: 90vh;
   padding: 20px;
   overflow: scroll;
+  display: flex;
+  flex-direction: column;
+
 
   .back {
     margin-block: 25px;
@@ -69,5 +72,12 @@
     h1 {
       font-weight: 800;
     }
+  }
+}
+
+@media only screen and (min-width: 750px) {
+  .host-van-deatil-card {
+    align-self: center;
+    width: 550px;
   }
 }

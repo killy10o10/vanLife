@@ -26,7 +26,7 @@ function Vans() {
   };
 
   const handleClearFilter = () => {
-    setSeachParams("");
+    setSeachParams('');
   };
 
   const displayedVans = typeFilter
@@ -34,7 +34,14 @@ function Vans() {
     : vansData;
 
   const vanListEl = displayedVans.map((van) => (
-    <motion.div animate={{opacity: 1}} initial={{opacity: 0}} exit={{opacity: 0}} layout className="van" key={van.id}>
+    <motion.div
+      animate={{ opacity: 1 }}
+      initial={{ opacity: 0 }}
+      exit={{ opacity: 0 }}
+      layout
+      className="van"
+      key={van.id}
+    >
       <div className="van-image">
         <Link to={`/vans/${van.id}`} state={van}>
           <img src={van.imageUrl} alt={van.name} />
@@ -57,7 +64,7 @@ function Vans() {
     <section className="vans-section">
       <div className="category">
         <h3>Explore our van options</h3>
-        <small onClick={handleClearFilter}>Clear filters</small>
+        {searchParams.size ? <small onClick={handleClearFilter}>Clear filters</small> : ""}
         <ul className="category-list">
           <li onClick={handleFilter} className="simple">
             Simple
@@ -72,11 +79,11 @@ function Vans() {
       </div>
       <motion.div layout className="vans">
         <AnimatePresence>
-            {vansData.length === 0 ? (
-              <h3 className="center bold">Loading...</h3>
-            ) : (
-              vanListEl
-            )}
+          {vansData.length === 0 ? (
+            <h3 className="center bold">Loading...</h3>
+          ) : (
+            vanListEl
+          )}
         </AnimatePresence>
       </motion.div>
     </section>

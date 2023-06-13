@@ -66,13 +66,13 @@ function Vans() {
         <h3>Explore our van options</h3>
         {searchParams.size ? <small onClick={handleClearFilter}>Clear filters</small> : ""}
         <ul className="category-list">
-          <li onClick={handleFilter} className="simple">
+          <li onClick={handleFilter} className={`simple ${typeFilter === "simple" && "selected"}`}>
             Simple
           </li>
-          <li onClick={handleFilter} className="luxury">
+          <li onClick={handleFilter} className={`luxury ${typeFilter === "luxury" && "selected"}`}>
             Luxury
           </li>
-          <li onClick={handleFilter} className="rugged">
+          <li onClick={handleFilter} className={`rugged ${typeFilter === "rugged" && "selected"}`}>
             Rugged
           </li>
         </ul>

@@ -23,7 +23,7 @@ const HostVanDetail = () => {
     <>
       <section className="host-van-detail-section">
         <Link to=".." relative="path" className="back">
-          <BsArrowLeft /> Back to all vans
+          <BsArrowLeft /> Back to listed vans
         </Link>
         <div className="host-van-deatil-card">
           <div className="host-van-detail-head">

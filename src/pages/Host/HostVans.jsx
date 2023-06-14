@@ -17,17 +17,17 @@ const HostVans = () => {
 
   const hostVans = vans.map((van) => {
     return (
-      <Link to={`/host/vans/${van.id}`} key={van.id} state={van}>
-        <div className="host-van">
-          <div className="host-van-image">
-            <img src={van.imageUrl} alt={van.name} />
+        <Link to={van.id} key={van.id} state={van}>
+          <div className="host-van">
+            <div className="host-van-image">
+              <img src={van.imageUrl} alt={van.name} />
+            </div>
+            <div className="host-van-desc">
+              <h4>{van.name}</h4>
+              <small>${van.price}/day</small>
+            </div>
           </div>
-          <div className="host-van-desc">
-            <h4>{van.name}</h4>
-            <small>${van.price}/day</small>
-          </div>
-        </div>
-      </Link>
+        </Link>
     );
   });
 
@@ -35,9 +35,9 @@ const HostVans = () => {
     <>
       <section className="host-vans-section">
         <h3>Your Listed Vans</h3>
-        <div className="host-vans-container">
+        <div layout className="host-vans-container">
           {/* Host Van */}
-          {vans.length === 0 ? <h3 className='center'>Loading...</h3> : hostVans}   
+           {vans.length === 0 ? <h3 className='center'>Loading...</h3> : hostVans}  
         </div>
       </section>
     </>

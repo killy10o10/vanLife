@@ -1,0 +1,18 @@
+.page-404-section {
+  min-height: 80vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+
+  h3 {
+    margin-block: 40px;
+    font-weight: 800;
+    font-size: 2.25em;
+  }
+
+  h3, .button {
+    max-width: 500px;
+  }
+}

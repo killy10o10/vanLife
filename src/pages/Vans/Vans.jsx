@@ -43,7 +43,7 @@ function Vans() {
       key={van.id}
     >
       <div className="van-image">
-        <Link to={`/vans/${van.id}`} state={van}>
+        <Link to={van.id} state={{van: van, search: `?${searchParams.toString()}`}}>
           <img src={van.imageUrl} alt={van.name} />
         </Link>
         <div className="van-name">
@@ -64,15 +64,28 @@ function Vans() {
     <section className="vans-section">
       <div className="category">
         <h3>Explore our van options</h3>
-        {searchParams.size ? <small onClick={handleClearFilter}>Clear filters</small> : ""}
+        {searchParams.size ? (
+          <small onClick={handleClearFilter}>Clear filters</small>
+        ) : (
+          ''
+        )}
         <ul className="category-list">
-          <li onClick={handleFilter} className={`simple ${typeFilter === "simple" && "selected"}`}>
+          <li
+            onClick={handleFilter}
+            className={`simple ${typeFilter === 'simple' && 'selected'}`}
+          >
             Simple
           </li>
-          <li onClick={handleFilter} className={`luxury ${typeFilter === "luxury" && "selected"}`}>
+          <li
+            onClick={handleFilter}
+            className={`luxury ${typeFilter === 'luxury' && 'selected'}`}
+          >
             Luxury
           </li>
-          <li onClick={handleFilter} className={`rugged ${typeFilter === "rugged" && "selected"}`}>
+          <li
+            onClick={handleFilter}
+            className={`rugged ${typeFilter === 'rugged' && 'selected'}`}
+          >
             Rugged
           </li>
         </ul>

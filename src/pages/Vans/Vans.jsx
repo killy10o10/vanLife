@@ -43,7 +43,7 @@ function Vans() {
       key={van.id}
     >
       <div className="van-image">
-        <Link to={van.id} state={{van: van, search: `?${searchParams.toString()}`}}>
+        <Link to={van.id} state={{van: van, search: `?${searchParams.toString()}`, type: typeFilter}}>
           <img src={van.imageUrl} alt={van.name} />
         </Link>
         <div className="van-name">

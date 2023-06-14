@@ -7,11 +7,12 @@ function VanDetails() {
   const { state } = location;
 
   const searchFilter = state.search ||  "";
+  const typeFilter = state.type || "all"
 
   return (
     <section className="van-details-section">
       <Link to={`..${searchFilter}`} relative="path" className="back">
-        <BsArrowLeft /> Back to all vans
+        <BsArrowLeft />  Back to {typeFilter} vans
       </Link>
       <motion.div layout className="van-details-grid">
         <div className="van-details-image">

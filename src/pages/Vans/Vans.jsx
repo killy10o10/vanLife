@@ -1,21 +1,13 @@
-import { useState, useEffect } from 'react';
-import { Link, useSearchParams } from 'react-router-dom';
+import { Link, useLoaderData, useSearchParams } from 'react-router-dom';
 import { motion, AnimatePresence } from 'framer-motion';
+import { getVans } from '../../../api';
+
+export function loader() {
+  return getVans();
+}
 
 function Vans() {
-  const [vansData, setVansData] = useState([]);
-
-  useEffect(() => {
-    (async () => {
-      try {
-        const response = await fetch('/api/vans');
-        const data = await response.json();
-        setVansData(data.vans);
-      } catch (err) {
-        console.log('Error occured when fetching vans');
-      }
-    })();
-  }, []);
+  const vansData = useLoaderData();
 
   const [searchParams, setSeachParams] = useSearchParams();
   const typeFilter = searchParams.get('type');
@@ -43,7 +35,14 @@ function Vans() {
       key={van.id}
     >
       <div className="van-image">
-        <Link to={van.id} state={{van: van, search: `?${searchParams.toString()}`, type: typeFilter}}>
+        <Link
+          to={van.id}
+          state={{
+            van: van,
+            search: `?${searchParams.toString()}`,
+            type: typeFilter,
+          }}
+        >
           <img src={van.imageUrl} alt={van.name} />
         </Link>
         <div className="van-name">

@@ -23,7 +23,7 @@
   font-weight: 400;
 }
 
-body, html {
+body {
   background-color: $paleBackground;
 }
 
@@ -51,7 +51,7 @@ a {
 }
 
 .section {
-  height: 90vh;
+  min-height: 100vh;
 }
 
 .button {

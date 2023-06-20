@@ -2,9 +2,8 @@ import { Link, useLoaderData, useSearchParams } from 'react-router-dom';
 import { motion, AnimatePresence } from 'framer-motion';
 import { getVans } from '../../../api';
 
-export function loader() {
-  return getVans();
-}
+export const loader = () => getVans();
+
 
 function Vans() {
   const vansData = useLoaderData();

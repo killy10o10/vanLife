@@ -1,3 +1,4 @@
+import { BsPersonCircle } from 'react-icons/bs';
 import { Link, NavLink } from 'react-router-dom';
 
 function Navbar() {
@@ -26,6 +27,11 @@ function Navbar() {
           to="/vans"
         >
           Vans
+        </NavLink>
+        <NavLink
+          to="login"
+        >
+          <BsPersonCircle />
         </NavLink>
       </div>
     </nav>

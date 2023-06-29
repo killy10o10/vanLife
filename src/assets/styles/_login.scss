@@ -7,6 +7,11 @@
 
 .login-form {
   margin-top: 5rem;
+  padding: 20px;
+
+  span a {
+    color: $buttonOrange;
+  }
 }
 
   button {

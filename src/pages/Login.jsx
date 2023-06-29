@@ -1,14 +1,34 @@
+import { useState } from "react"
+
 function Login() {
+  const [loginFormData, setLoginFormData] = useState({
+    email: "",
+    password: ""
+  });
+
+  const handleSubmit = (e) => {
+    e.preventDefault()
+    console.log(loginFormData)
+  }
+
+  const handleChange = (e) => {
+    const {name, value} = e.target 
+    setLoginFormData(prev => ({
+      ...prev,
+      [name]: value
+    }))
+  }
+
   return (
     <section className="login-section section">
       <h1>Sign in to your account</h1>
 
       <form className="login-form">
         <div className="form-input">
-          <input type="email" placeholder="Email addrress" />
-          <input type="password" placeholder="Password" />
+          <input name="email" value={loginFormData.email} onChange={handleChange} type="email" placeholder="Email addrress" />
+          <input name="password" value={loginFormData.password} onChange={handleChange} type="password" placeholder="Password" />
         </div>
-          <button className="button">Sign In</button>
+          <button type="submit" onClick={handleSubmit} className="button">Sign In</button>
         <span>Don't have an account? <a href="#">Create one now</a></span>
       </form>
     </section>

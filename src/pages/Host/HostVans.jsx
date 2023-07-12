@@ -24,7 +24,7 @@ const HostVans = () => {
             </div>
             <div className="host-van-desc">
               <h4>{van.name}</h4>
-              <small>${van.price}/day</small>
+              <small>GH₵{van.price}/day</small>
             </div>
           </div>
         </Link>

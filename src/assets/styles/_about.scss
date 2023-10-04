@@ -1,3 +1,7 @@
+.about-section {
+  min-height: 100dvh;
+}
+
 .about-content {
   margin-block: 50px;
   padding-inline: 20px;
@@ -9,7 +13,6 @@
     margin-bottom: 32px;
   }
 }
-
 
 .explore-card {
   width: 100%;
@@ -27,4 +30,24 @@
 
 .about-img img {
   width: 100%;
+}
+
+@media only screen and (min-width: 850px) {
+  .about-section {
+    display: flex;
+    padding: 20px;
+
+    .about-img {
+      flex: 1.1;
+      align-self: center;
+    }
+
+    .about-content {
+      flex: 1;
+    }
+
+    .explore-card {
+      width: 60%;
+    }
+  }
 }

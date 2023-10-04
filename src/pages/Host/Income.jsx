@@ -1,8 +1,10 @@
 function Income() {
   return (
-    <div>
-      <h1>Income</h1>
-    </div>
+    <section className="income-section section">
+      <h4>Income</h4>
+      <small>Last <span className="days">30 days</span></small>
+      <h3>GH₵2,260</h3>
+    </section>
   )
 }
 

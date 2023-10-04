@@ -33,7 +33,7 @@ const HostVans = () => {
 
   return (
     <>
-      <section className="host-vans-section">
+      <section className="host-vans-section section">
         <h3>Your Listed Vans</h3>
         <div layout className="host-vans-container">
           {/* Host Van */}

@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 
 function About() {
   return (
-    <section className="about-section">
+    <section className="about-section section">
       <div className="about-img">
         <img src={aboutImg} alt="about-img" />
       </div>

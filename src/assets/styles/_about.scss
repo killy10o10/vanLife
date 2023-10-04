@@ -35,7 +35,7 @@
 @media only screen and (min-width: 850px) {
   .about-section {
     display: flex;
-    padding: 20px;
+    padding-inline: 20px;
 
     .about-img {
       flex: 1.1;
@@ -44,10 +44,11 @@
 
     .about-content {
       flex: 1;
+      margin-top: 0;
     }
 
     .explore-card {
-      width: 60%;
+      width: 450px;
     }
   }
 }

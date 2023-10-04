@@ -1,6 +1,5 @@
 .vans-section {
   padding: 20px;
-  min-height: 100vh;
 }
 
 .category {
@@ -29,15 +28,18 @@
       transition: all 0.3s;
       user-select: none;
     }
-    .simple:hover, .simple.selected {
+    .simple:hover,
+    .simple.selected {
       background-color: #e17654;
       color: #ffead0;
     }
-    .luxury:hover, .luxury.selected {
+    .luxury:hover,
+    .luxury.selected {
       background-color: #161616;
       color: #ffead0;
     }
-    .rugged:hover, .rugged.selected {
+    .rugged:hover,
+    .rugged.selected {
       background-color: #115e59;
       color: #ffead0;
     }

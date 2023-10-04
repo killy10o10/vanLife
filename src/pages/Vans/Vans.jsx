@@ -59,7 +59,7 @@ function Vans() {
   ));
 
   return (
-    <section className="vans-section">
+    <section className="vans-section section">
       <div className="category">
         <h3>Explore our van options</h3>
         {searchParams.size ? (

@@ -35,7 +35,7 @@ const HostVans = () => {
     <>
       <section className="host-vans-section section">
         <h3>Your Listed Vans</h3>
-        <div layout className="host-vans-container">
+        <div className="host-vans-container">
           {/* Host Van */}
            {vans.length === 0 ? <h3 className='center'>Loading...</h3> : hostVans}  
         </div>

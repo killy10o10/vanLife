@@ -4,17 +4,23 @@
   align-items: center;
   text-align: center;
 
-
-.login-form {
-  margin-top: 5rem;
-  padding: 20px;
-
-  span a {
-    color: $buttonOrange;
-    font-family: 'Unbounded', system-ui, -apple-system, sans-serif;
-    font-size: 1rem;
+  .error-message {
+    color: red;
+    font-style: italic;
+    font-size: 16px;
+    margin-bottom: 20px;
   }
-}
+
+  .login-form {
+    margin-top: 5rem;
+    padding: 20px;
+
+    span a {
+      color: $buttonOrange;
+      font-family: 'Unbounded', system-ui, -apple-system, sans-serif;
+      font-size: 1rem;
+    }
+  }
 
   button {
     margin-block: 2rem;
@@ -22,7 +28,7 @@
     cursor: pointer;
   }
 
-  .form-input{
+  .form-input {
     display: flex;
     flex-direction: column;
     gap: 15px;

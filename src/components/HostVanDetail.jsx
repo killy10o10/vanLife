@@ -1,24 +1,13 @@
-import { Link, NavLink, Outlet, useParams } from 'react-router-dom';
+import { Link, NavLink, Outlet, useLoaderData } from 'react-router-dom';
 import { BsArrowLeft } from 'react-icons/bs';
-import { useEffect, useState } from 'react';
+import { getHostVans } from '../../api';
+
+
+export const loader = ({params}) => getHostVans(params.id);
 
 const HostVanDetail = () => {
+  const currentVan = useLoaderData()
 
-  const { id } = useParams();
-
-  const [currentVan, setCurrentVan] = useState([]);
-  useEffect(() => {
-    (async () => {
-      try {
-        const response = await fetch(`/api/host/vans/${id}`);
-        const data = await response.json();
-        setCurrentVan(data.vans);
-      } catch (err) {
-        console.log(err);
-      }
-    })();
-  }, []);
-  
   return (
     <>
       <section className="host-van-detail-section">

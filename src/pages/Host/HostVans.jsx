@@ -1,19 +1,12 @@
-import { Link } from 'react-router-dom';
-import { useEffect, useState } from 'react';
+import { Link, useLoaderData } from 'react-router-dom';
+import { getHostVans } from '../../../api';
+
+export const loader = () => {
+  return getHostVans()
+}
 
 const HostVans = () => {
-  const [vans, setVans] = useState([]);
-  useEffect(() => {
-    (async () => {
-      try {
-        const response = await fetch('/api/host/vans');
-        const data = await response.json();
-        setVans(data.vans);
-      } catch (err) {
-        console.log('Error occurred when fetching vans');
-      }
-    })();
-  }, []);
+  const vans = useLoaderData()
 
   const hostVans = vans.map((van) => {
     return (
